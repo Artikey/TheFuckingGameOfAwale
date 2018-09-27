@@ -1,1 +1,4 @@
 # TheFuckingGameOfAwale
+
+
+#### authors: Artikey, Caberu
