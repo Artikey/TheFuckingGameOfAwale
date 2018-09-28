@@ -15,5 +15,6 @@ while True:
             if event.key == pygame.K_ESCAPE:
                 pygame.quit()
                 sys.exit()
+    theBoard.ref()
     theBoard.draw()
     pygame.display.flip()
