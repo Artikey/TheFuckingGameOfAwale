@@ -1,14 +1,19 @@
 import sys, pygame
 from pygame.locals import *
+from Board import Board
+from Const import *
 
 pygame.init()
-screen = pygame.display.set_mode([640, 480])
-
+theBoard = Board()
 
 while True:
-    screen.fill((120, 120, 120))
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                pygame.quit()
+                sys.exit()
+    theBoard.draw()
     pygame.display.flip()
