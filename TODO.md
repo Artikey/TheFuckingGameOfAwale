@@ -2,7 +2,7 @@
 ## This is the TODO file where we place the things we need to implement
 
 
-###
+### List
 
 1. implement the enemy part of the game
     * maybe a neural network ?
