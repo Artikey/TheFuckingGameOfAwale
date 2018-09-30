@@ -1,4 +1,5 @@
 # TheFuckingGameOfAwale
 
 
-#### authors: Artikey, Caberu
+#### author: Caberu
+#### project coordinator: Artikey

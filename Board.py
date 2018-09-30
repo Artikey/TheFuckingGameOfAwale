@@ -8,14 +8,13 @@ class Board:
                          3:[4,blanc],
                          4:[4,blanc],
                          5:[4,blanc],
-                         6:[4,blanc],
+                         6:[1,blanc],
                          7:[1,blanc],
-                         8:[4,blanc],
-                         9:[4,blanc],
-                        10:[4,blanc],
+                         8:[1,blanc],
+                         9:[1,blanc],
+                        10:[1,blanc],
                         11:[4,blanc],
-                        12:[4,blanc]
-                        }
+                        12:[4,blanc]}
         self.btnList = []
         a = 1
         while a < 7:
@@ -67,11 +66,12 @@ class Board:
                         trot = 1
                     self.dictTrou[trot][0] += 1
                     self.dictTrou[slct][0] -= 1
-                print("whoup! \o/\n")
-                if (self.dictTrou[trot][0] == 2 or self.dictTrou[trot][0] == 3) and \
+                while (self.dictTrou[trot][0] == 2 or self.dictTrou[trot][0] == 3) and \
                 (trot>=7 and trot<=12):
                     self.scorePlayer += self.dictTrou[trot][0]
                     self.dictTrou[trot][0] = 0
+                    trot -= 1
+                    
 
             else:
                 print("Ce trou est vide!!! (connard)")
