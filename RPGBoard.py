@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import pygame
 from Player import Player
 pygame.init()
