@@ -26,7 +26,7 @@ class Board:
     def draw(self):
         window.fill((0,0,0))
         window.blit(fontSize(45).render("Player: "+str(self.scorePlayer), True, blanc),(100,100))
-        window.blit(fontSize(45).render("Enemy: "+str(self.scoreEnemy), True, blanc),(700,100))
+        window.blit(fontSize(45).render("Enemy: "+str(self.scoreEnemy), True, blanc),(600,100))
         pygame.draw.rect(window,blanc,(50,392,700,5))
 
         trot=0
