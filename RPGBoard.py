@@ -17,14 +17,14 @@ while running:
             running = False
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_a]:
+    if keys[pygame.K_LEFT]
         p.x -= p.vel
 
-    if keys[pygame.K_d]:
+    if keys[pygame.K_RIGHT]:
         p.x += p.vel
-    if keys[pygame.K_w]:
+    if keys[pygame.K_UP]:
         p.y -= p.vel
-    if keys[pygame.K_s]:
+    if keys[pygame.K_DOWN]:
         p.y += p.vel
 
     p.draw(win)
