@@ -17,7 +17,7 @@ while running:
             running = False
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT]
+    if keys[pygame.K_LEFT]:
         p.x -= p.vel
 
     if keys[pygame.K_RIGHT]:
