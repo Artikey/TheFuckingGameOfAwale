@@ -1,33 +1,32 @@
 #!/usr/bin/python3
 import pygame
 from Player import Player
-pygame.init()
+class RPGBoard():
+    def __init__(self):
+        pygame.init()
+        
+        self.win = pygame.display.set_mode((800,600))
+        
+        pygame.display.set_caption("RPGStyledBoard")
+        
+        self.p = Player(50, 50, 40, 60, 5, (255, 0, 0))
+        
+    def ref(self):
+        self.win.fill((0, 0, 0))
+    
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            self.p.x -= self.p.vel
+            
+        if keys[pygame.K_RIGHT]:
+            self.p.x += self.p.vel
+            
+        if keys[pygame.K_UP]:
+            self.p.y -= self.p.vel
+            
+        if keys[pygame.K_DOWN]:
+            self.p.y += self.p.vel
+    def draw(self):
+        self.p.draw(self.win)
+        pygame.display.update()
 
-win = pygame.display.set_mode((500, 500))
-
-pygame.display.set_caption("RPGStyledBoard")
-
-p = Player(50, 50, 40, 60, 5, (255, 0, 0))
-running = True
-while running:
-    win.fill((0, 0, 0))
-    pygame.time.delay(10)
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT]:
-        p.x -= p.vel
-
-    if keys[pygame.K_RIGHT]:
-        p.x += p.vel
-    if keys[pygame.K_UP]:
-        p.y -= p.vel
-    if keys[pygame.K_DOWN]:
-        p.y += p.vel
-
-    p.draw(win)
-    pygame.display.update()
-
-pygame.quit()

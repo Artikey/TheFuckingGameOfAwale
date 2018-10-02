@@ -8,11 +8,11 @@ class Board:
                          3:[4,blanc],
                          4:[4,blanc],
                          5:[4,blanc],
-                         6:[1,blanc],
-                         7:[1,blanc],
-                         8:[1,blanc],
-                         9:[1,blanc],
-                        10:[1,blanc],
+                         6:[4,blanc],
+                         7:[4,blanc],
+                         8:[4,blanc],
+                         9:[4,blanc],
+                        10:[4,blanc],
                         11:[4,blanc],
                         12:[4,blanc]}
         self.btnList = []
@@ -22,11 +22,12 @@ class Board:
             a += 1
         self.scorePlayer = 0
         self.scoreEnemy = 0
+        self.textOn = True
 
     def draw(self):
         window.fill((0,0,0))
-        window.blit(fontSize(45).render("Player: "+str(self.scorePlayer), True, blanc),(100,100))
-        window.blit(fontSize(45).render("Enemy: "+str(self.scoreEnemy), True, blanc),(600,100))
+        window.blit(fontSize(45).render("Player: "+str(self.scorePlayer), True, blanc),(100,550))
+        window.blit(fontSize(45).render("Enemy: "+str(self.scoreEnemy), True, blanc),(500,550))
         pygame.draw.rect(window,blanc,(50,392,700,5))
 
         trot=0
@@ -42,6 +43,11 @@ class Board:
                 trot+=1
                 pygame.draw.ellipse(window, self.dictTrou[t][1],(735-(110*trot),340,100,50))
                 window.blit(fontSize(45).render(str(self.dictTrou[t][0]), True, noir),(760-(110*trot),350))
+        if self.textOn:
+            pygame.draw.rect(window, blanc, (0,10,800,100))
+            pygame.draw.rect(window, noir, (5,15,790,90))
+            window.blit(fontSize(40).render("Line 1 yeah that's the first line and it's awesome!!", True, blanc),(40,25))
+            window.blit(fontSize(40).render("Line 2 is boring.", True, blanc),(40,60))
 
 
     """ not GUI part"""
@@ -72,7 +78,4 @@ class Board:
                     self.dictTrou[trot][0] = 0
                     trot -= 1
                     
-
-            else:
-                print("Ce trou est vide!!! (connard)")
 
