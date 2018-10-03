@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 import pygame
+
 from Player import Player
+
+
 class RPGBoard():
     def __init__(self):
         pygame.init()
@@ -8,8 +11,8 @@ class RPGBoard():
         self.win = pygame.display.set_mode((800,600))
         
         pygame.display.set_caption("RPGStyledBoard")
-        
-        self.p = Player(50, 50, 40, 60, 5, (255, 0, 0))
+
+        self.p = Player(50, 50, 40, 60, 1, (255, 0, 0))
         
     def ref(self):
         self.win.fill((0, 0, 0))
